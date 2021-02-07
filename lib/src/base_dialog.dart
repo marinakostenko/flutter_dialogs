@@ -18,6 +18,12 @@ abstract class BaseDialog<A extends Widget, I extends Widget>
         return buildAndroidWidget(context);
       case TargetPlatform.iOS:
         return buildiOSWidget(context);
+      case TargetPlatform.windows:
+        return buildAndroidWidget(context);
+      case TargetPlatform.macOS:
+        return buildiOSWidget(context);
+      case TargetPlatform.linux:
+        return buildAndroidWidget(context);
       default:
         throw UnsupportedError("Platform is not supported by this plugin.");
     }

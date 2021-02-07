@@ -24,6 +24,23 @@ Future<T> showPlatformDialog<T>({
         context: context,
         builder: builder,
       );
+    case TargetPlatform.windows:
+      return showDialog<T>(
+        context: context,
+        builder: builder,
+        barrierDismissible: androidBarrierDismissible,
+      );
+    case TargetPlatform.macOS:
+      return showCupertinoDialog<T>(
+        context: context,
+        builder: builder,
+      );
+    case TargetPlatform.linux:
+      return showDialog<T>(
+        context: context,
+        builder: builder,
+        barrierDismissible: androidBarrierDismissible,
+      );
     default:
       throw UnsupportedError("Platform is not supported by this plugin.");
   }
