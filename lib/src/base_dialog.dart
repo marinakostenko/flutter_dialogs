@@ -14,9 +14,9 @@ abstract class BaseDialog<A extends Widget, I extends Widget>
     final platform = Theme.of(context).platform;
 
     switch (platform) {
-      case TargetPlatform.iOS:
-        return buildAndroidWidget(context);
       case TargetPlatform.android:
+        return buildAndroidWidget(context);
+      case TargetPlatform.iOS:
         return buildiOSWidget(context);
       case TargetPlatform.windows:
         return buildAndroidWidget(context);
